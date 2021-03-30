@@ -1,0 +1,36 @@
+{% extends "base_template.html" %}
+
+{% block title %}Proyecto de Flask: Turbb{% endblock %}
+
+{% block content %} 
+<div class="container-md">
+	<div class="row">
+		<div class="col-md-6 bg bg-light rounded" style="margin-top: 50px;">
+			<div class="row" style="padding: 30px;">
+				<div class="col-md-6">
+					<ul> 
+					{% for key in post[0] %}
+						<li>{{ post[0][key] }} --></li>
+					{% endfor %}
+				    </ul>
+				</div>
+				<div class="col-md-6">
+					<ul>
+					{% for key in post[1] %}
+						<li>
+							{{ post[1][key] }}
+							{% if post[1][key] == "200" %}  
+							    <div class="spinner-grow text-success" role="status" style="width: 10px; height: 10px;"><span class="visually-hidden">Loading...</span></div>
+							{% else %}  
+							    <div class="spinner-grow text-danger" role="status" style="width: 10px; height: 10px;"><span class="visually-hidden">Loading...</span></div>  
+							{% endif %}
+						</li>
+					{% endfor %}
+				    </ul>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+{% endblock %}

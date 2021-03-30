@@ -1,0 +1,26 @@
+{% extends "base_template.html" %}
+
+{% block title %}Proyecto de Flask: Turbb{% endblock %}
+
+{% block content %}
+
+<div class="px-4 py-5 my-5 text-center">
+		<img class="d-block mx-auto mb-8" src="../static/assets/brand/bootstrap-logo.svg" alt="" width="92" height="87">
+		<h1 class="display-4 fw-bold">Turbb</h1>
+		<div class="col-lg-6 mx-auto">
+			<p class="lead mb-4">Turbb es una pequeña herramienta desarrollada en python con flask, la cual en su primera version sirve para comprobar la existencia y la disponibilidad de numerosos sitios web donde son exportados de un archivo CSV.</p>
+
+			<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+				<form class="was-validated" action="/post/" method="POST" enctype="multipart/form-data"> 
+					<!-- Aplicable de bootstrap 4 -->
+					<div class="custom-file">
+						<input type="file" class="custom-file-input" name="archivo"  required>
+						<!--<label class="custom-file-label" for="customFile" style="border: 1px solid silver; border-radius: 4px; width: 250px; height: 50px; position: relative; bottom: 0px; left: 1px; text-align: left; padding: 10px;">Selecciona un archivo (CSV)</label>-->
+						<input type="submit" class="btn btn-warning btn-lg px-4">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="b-example-divider"></div>
+{% endblock %}
